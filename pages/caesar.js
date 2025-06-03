@@ -1,4 +1,4 @@
- function caesar(str, key = 1) {
+function caesar(str, key = 1) {
     let result = '';
 
     for(let i = 0 ; i < str.length ; i++) {

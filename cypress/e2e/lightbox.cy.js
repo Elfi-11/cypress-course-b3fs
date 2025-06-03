@@ -1,25 +1,23 @@
 /// <reference types="cypress" />
 
-describe('lightbox', () => {
-
+describe('test: lightbox.html', () => {
     beforeEach(() => {
-        cy.visit('../../components/lightbox.html')
+        cy.visit('../../pages/lightbox.html')
     })
 
     // 1
     it('should open lightbox, click on image', () => {
         cy.dataCy('lightbox-overlay').click();
         cy.dataCy('lightbox').should('be.visible');
-    });
+    })
 
     // 2
     it('should close lightbox, click away from image', () => {
         cy.dataCy('lightbox-overlay').click();
         cy.get('body').click(0, 0);
         cy.dataCy('lightbox').should('not.be.visible');
-    });
+    })
 
-    // 3
     it('should add a like and update counters', () => {
         cy.dataCy('lightbox-overlay').click();
         cy.dataCy('lightbox').scrollTo('bottom');
@@ -34,11 +32,10 @@ describe('lightbox', () => {
 
         // Overlay counter
         cy.get('body').click(0, 0);
-        // cy.dataCy('lightbox-overlay').trigger('mouseover');
+        cy.dataCy('lightbox-overlay').trigger('mouseover');
         cy.dataCy('overlay-like-count').should('have.text', 1)
     });
 
-    // 4
     it('should add, then delete a like and update counters', () => {
         cy.dataCy('lightbox-overlay').click();
         cy.dataCy('lightbox').scrollTo('bottom');
@@ -54,7 +51,7 @@ describe('lightbox', () => {
 
         // Overlay counter
         cy.get('body').click(0, 0);
-        // cy.dataCy('lightbox-overlay').trigger('mouseover');
+        cy.dataCy('lightbox-overlay').trigger('mouseover');
         cy.dataCy('overlay-like-count').should('have.text', 0)
     });
 
@@ -74,14 +71,14 @@ describe('lightbox', () => {
 
         // Overlay counter
         cy.get('body').click(0, 0);
-        // cy.dataCy('lightbox-overlay').trigger('mouseover');
+        cy.dataCy('lightbox-overlay').trigger('mouseover');
         cy.dataCy('overlay-comment-count').should('have.text', 1)
     });
     
     // 6
     it('should not add an empty comment, publish button disabled', () => {
         cy.dataCy('lightbox-overlay').click();
-        // cy.dataCy('lightbox').scrollTo('bottom');
+        cy.dataCy('lightbox').scrollTo('bottom');
         cy.dataCy('comment-publish').should('be.disabled');
     });
 
@@ -112,7 +109,7 @@ describe('lightbox', () => {
         
         // Overlay counter
         cy.get('body').click(0, 0);
-        // cy.dataCy('lightbox-overlay').trigger('mouseover');
+        cy.dataCy('lightbox-overlay').trigger('mouseover');
         cy.dataCy('overlay-comment-count').should('have.text', 1)
     });
 
@@ -139,7 +136,7 @@ describe('lightbox', () => {
         
         // Overlay counter
         cy.get('body').click(0, 0);
-        // cy.dataCy('lightbox-overlay').trigger('mouseover');
+        cy.dataCy('lightbox-overlay').trigger('mouseover');
         cy.dataCy('overlay-comment-count').should('have.text', 2)
     });
 
@@ -162,8 +159,7 @@ describe('lightbox', () => {
 
         // Delete Comment 2
         cy.dataCy('delete-comment-svg-1').click();
+
+        
     });
-
-    // --
-
-});
+})
