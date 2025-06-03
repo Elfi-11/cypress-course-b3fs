@@ -1,0 +1,23 @@
+{
+  "name": "cypress-course-b3fs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elfi-11/cypress-course-b3fs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elfi-11/cypress-course-b3fs/issues"
+  },
+  "homepage": "https://github.com/Elfi-11/cypress-course-b3fs#readme",
+  "dependencies": {
+    "cypress": "^14.4.0"
+  }
+}
